@@ -4,10 +4,8 @@
 FROM swift:6.1-noble AS build
 
 # Install OS updates
-RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
-    && apt-get -q update \
-    && apt-get -q dist-upgrade -y \
-    && apt-get install -y libjemalloc-dev
+RUN apt-get -q update && apt-get install -y libjemalloc-dev && rm -rf /var/lib/apt/lists/*
+
 
 # Set up a build area
 WORKDIR /build
