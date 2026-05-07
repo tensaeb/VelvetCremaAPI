@@ -30,6 +30,7 @@ let package = Package(
         .executableTarget(
             name: "Run",
             dependencies: [.target(name: "App")],
+            path: "Sources/Run",
             swiftSettings: swiftSettings
         ),
         // 3. The Tests - Now they depend on "App" and won't overlap
@@ -39,6 +40,7 @@ let package = Package(
                 .target(name: "App"),
                 .product(name: "VaporTesting", package: "vapor"),
             ],
+            path: "Tests",
             swiftSettings: swiftSettings
         )
     ]
