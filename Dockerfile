@@ -27,9 +27,9 @@ RUN mkdir /staging
 # N.B.: The static version of jemalloc is incompatible with the static Swift runtime.
 RUN --mount=type=cache,target=/build/.build \
     swift build -c release \
-        --product VelvetCremaAPI \
-        --static-swift-stdlib \
-        -Xlinker -ljemalloc && \
+    --product VelvetCremaAPI \
+    --static-swift-stdlib \
+    -Xlinker -ljemalloc && \
     # Copy main executable to staging area
     cp "$(swift build -c release --show-bin-path)/VelvetCremaAPI" /staging && \
     # Copy resources bundled by SPM to staging area

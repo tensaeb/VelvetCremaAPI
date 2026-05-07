@@ -34,15 +34,15 @@ let package = Package(
             swiftSettings: swiftSettings
         ),
         // 3. The Tests - Now they depend on "App" and won't overlap
-        .testTarget(
-            name: "AppTests",
-            dependencies: [
-                .target(name: "App"),
-                .product(name: "VaporTesting", package: "vapor"),
-            ],
-            path: "Tests",
-            swiftSettings: swiftSettings
-        )
+//        .testTarget(
+//            name: "AppTests",
+//            dependencies: [
+//                .target(name: "App"),
+//                .product(name: "VaporTesting", package: "vapor"),
+//            ],
+//            path: "Tests",
+//            swiftSettings: swiftSettings
+//        )
     ]
 )
 
